@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -11,7 +12,27 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div >
+          <div className='flex flex-col w-36 h-full bg-slate-500 font-semibold 
+        text-lg justify-center items-center relative '>
+        <Link href='/'>Home(랜딩)</Link>
+        <Link href='/mint'>MINT</Link>
+        <Link href='/all'>ALL</Link>
+        <Link href='/mypage'>MYPAGE</Link>
+        <p>이부분은 햄버거 
+          <br/>클릭하면 나오게 하기</p>
+          </div>
+        </div>
+        
+        <div className='absolute top-5 left-52'>
+        <Link href='/'>로고이미지(누르면 메인으로)</Link>
+        </div>
+
+        <div className=' absolute left-[1600px] top-5'>
+          <Link href='/'>지갑</Link>
+        </div>
+        {children}</body>
     </html>
   )
 }
