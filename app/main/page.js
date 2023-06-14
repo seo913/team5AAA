@@ -13,7 +13,7 @@ export default function Main(){
                 </div>
             <div>
                 <img src="image.png" className="w-[400px] h-[400px] rounded-xl"/>
-                <p>우리팀로고</p>
+                <p>우리팀로고 김찬은 바보다.</p>
             </div>
             </div>
 
