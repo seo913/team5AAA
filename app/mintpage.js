@@ -6,12 +6,25 @@ export default function MintForm() {
   const [description, setDescription] = useState(''); // 내용
   let [src, setSrc] = useState(''); //이미지
 
-//   if (title === '') {
-//     alert('추억의 제목을 입력해주세요.');
-//   }
-//   if (description === '') {
-//     alert('추억의 내용을 적어주세요.');
-//   }
+  const titleChange = (event) => {
+    setTitle(event.target.value);
+  };
+  const descriptionChange = (event) => {
+    setDescription(event.target.value);
+  };
+
+  const SubmitAlert = (event) =>{
+    if (title === '') {
+      event.preventDefault();
+          alert('추억의 제목을 입력해주세요.');
+        }
+        if (description === '') {
+          event.preventDefault();
+          alert('추억의 내용을 적어주세요.');
+        }
+  }
+
+
   return (
     <form action='./api/post/create' method='POST'>
         <div className='flex justify-center  gap-10'>
@@ -55,6 +68,8 @@ export default function MintForm() {
           <p>추억의 제목을 입력해주세요.</p>
           <input
             type='text'
+            value={title}
+            onChange={titleChange}
             name='title'
             className='border-2 border-gray-400 w-[400px] rounded-md'
           ></input>
@@ -64,6 +79,8 @@ export default function MintForm() {
           <p>이 추억에 대해 간략하게 소개해주세요.</p>
           <input
             type='text'
+            value={description}
+            onChange={descriptionChange}
             name='description'
             className='border-2 border-gray-400 w-[400px] rounded-md'
           ></input>
@@ -71,6 +88,7 @@ export default function MintForm() {
         <div>
           <button
             type='submit'
+            onClick={SubmitAlert}
             className=' bg-slate-300 w-[400px] hover:bg-violet-200 rounded-md shadow-md shadow-indigo-400 font-semibold'
           >
             추억 민팅
