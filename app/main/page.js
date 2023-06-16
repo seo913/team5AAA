@@ -9,11 +9,11 @@ export default function Main(){
                 <p className="mb-1 font-semibold">그렇게 사람들은 향수병을 그리워하는데  타임스탬프와 스냅샷이 향수병으로 영원하게 남길수 있습니다.</p>
                 <p className="mb-1 font-semibold">앨범: 이용자들이 추억을 민팅할 때 사진 또는 동영상을 넣을 수 있습니다.</p>
                 <p className="mb-1 font-semibold">타임캡슐: 이용자들이 나중에 추억으로 열어보고싶은 것들은<br/>
-                타임캡슐기능을 사용하여 리빌 전 상태로 저장해놓고 이용자가 원하는 시기에 리빌을 할 수 있습니다.</p>
+                타임캡슐기능을 사용하여 리빌 전 상태로 저장해놓고 이용자가 원하는 시기에 리빌을 할 수 있습니다 .</p>
                 </div>
             <div>
                 <img src="image.png" className="w-[400px] h-[400px] rounded-xl"/>
-                <p>우리팀로고 김찬은 바보다.</p>
+                <p>우리팀로고 김찬은 바보다.123</p>
             </div>
             </div>
 
