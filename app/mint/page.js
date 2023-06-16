@@ -1,5 +1,5 @@
 export default async function Mint(){
     return(
-        <div>1</div>
+        <div>1234</div>
     )
 }
