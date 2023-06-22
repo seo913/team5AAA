@@ -1,5 +1,3 @@
-
-
 export default function Main() {
   return (
     <div className="wrap">
@@ -18,7 +16,7 @@ export default function Main() {
 
           <div className="introImg">
             <div className="imgbox">
-              <img src="intro.svg" alt='소개 이미지' />
+              <img src="intro.svg" alt="소개 이미지" />
             </div>
           </div>
         </div>
