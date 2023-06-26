@@ -1,5 +1,11 @@
+import { Inter } from 'next/font/google'
+ 
+const inter = Inter({ subsets: ['latin'] })
+ 
+
 export default function Main(){
     return(
+        <div >
         <div className="min-h-screen">
             <div className="ml-14 flex justify-around items-start">
             <div className="mt-2">
@@ -29,6 +35,7 @@ export default function Main(){
                 <p>민팅한결과물이나 다른 이미지</p>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
