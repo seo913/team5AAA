@@ -145,9 +145,9 @@ const FileUpload = () => {
           )}
         </div>
         <div className="bg-zinc-800 p-4 rounded-b-3xl">
-          <p className=" font-bold text-3xl text-slate-300">추억 민팅하기</p>
-          <p className="my-2 text-slate-200">
-            지원 가능한 파일형식(jpeg, jpg, webp, png, bmp)
+          <p className=" font-bold text-3xl text-white">추억 민팅하기</p>
+          <p className="ml-1 my-2 text-slate-400 text-xs">
+            *지원 가능한 파일형식(jpeg, jpg, webp, png, bmp)
           </p>
           <input
             type="file"
@@ -167,7 +167,7 @@ const FileUpload = () => {
         <div className="mb-5">
           <p className=" font-bold text-3xl mb-2 font-mono text-white">TITLE</p>
           <input
-            class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+            className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             placeholder="추억의 제목을 입력해주세요."
             type="text"
             value={title}
@@ -178,7 +178,7 @@ const FileUpload = () => {
         <div className="mb-5">
           <p className=" font-bold text-3xl mb-2 font-mono text-white">DESCRIPTION</p>
           <input
-            class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+            className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             placeholder="추억에 대해 간략하게 소개해주세요."
             type="text"
             value={content}
@@ -188,57 +188,67 @@ const FileUpload = () => {
 
         <div className="mb-5">
           <p className=" font-bold text-3xl mb-2 font-mono text-white">REVEAL-TYPE</p>
-          <p>원하는 타입을 선택해주세요.</p>
-          <span>
+          <span className="font-mono text-white mr-4">
             <input
               type="checkbox"
               name="normal"
               value={type}
               checked={isCheckedNormal}
               onChange={handleCheckboxChange}
+              className="mr-1 accent-pink-500"
             />
-            일반
+            Reveal Now
           </span>
-          <span>
+          <span className="font-mono text-white">
             <input
               type="checkbox"
               name="timecapsule"
               value={type}
               checked={isCheckedTimeCapsule}
               onChange={handleCheckboxChange}
+              className="mr-1 accent-pink-500"
             />
-            타임캡슐
+            Time Capsule
           </span>
+          <p className="text-slate-400 text-xs ml-1">*Time Capsule feature reveals your memories in the future.</p>
         </div>
 
         {isCheckedTimeCapsule && (
           <div className="mb-5">
             <p className="font-bold text-3xl mb-2 font-mono text-white">DURATION</p>
-            <p>원하는 기간을 선택해주세요.</p>
+            <span className="font-mono text-white mr-4">
             <input
               type="radio"
               name="timestamp"
               value="week"
               checked={selectedPeriod === "week"}
               onChange={handlePeriodChange}
+              className="mr-1 accent-pink-500"
             />
-            7일
+            7 Days
+            </span>
+            <span className="font-mono text-white mr-4">
             <input
               type="radio"
               name="timestamp"
               value="month"
               checked={selectedPeriod === "month"}
               onChange={handlePeriodChange}
+              className="mr-1 accent-pink-500"
             />
-            30일
+            30 Days
+            </span>
+            <span className="font-mono text-white mr-4">
             <input
               type="radio"
               name="timestamp"
               value="year"
               checked={selectedPeriod === "year"}
               onChange={handlePeriodChange}
+              className="mr-1 accent-pink-500"
             />
-            365일
+            365 Days
+            </span>
           </div>
         )}
 
@@ -251,7 +261,7 @@ const FileUpload = () => {
             bg-gradient-to-r from-blue-600 to-purple-600
             hover:cursor-pointer hover:opacity-80"
           >
-            추억민팅하기
+            TimeSnap
           </button>
         </div>
       </div>
