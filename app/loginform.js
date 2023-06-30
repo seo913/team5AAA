@@ -1,15 +1,17 @@
-'use client';
-import { useState } from 'react';
-import FileUpload from './mint/mintform';
+"use client";
+
+import { AppContext } from "./layout";
+import { useContext } from "react";
+import FileUpload from "./mint/mintform";
 
 export default function LoginForm() {
-  const [account, setAccount] = useState();
+  const { account, setAccount } = useContext(AppContext);
 
   async function connect() {
     if (window.ethereum) {
       try {
         const res = await window.ethereum.request({
-          method: 'eth_requestAccounts',
+          method: "eth_requestAccounts",
         });
         setAccount(res[0]);
         console.log(res);
@@ -17,27 +19,29 @@ export default function LoginForm() {
         console.error(error);
       }
     } else {
-      console.log('Install metamask');
+      console.log("Install metamask");
       // alert('Install metamas');
     }
   }
-  
+
   // window.addEventListener('load', () => {
   //   connect();
   // });
 
   return (
-    <div >
+    <div>
       <button
-        className='App text-white'
+        className="App text-white"
         onClick={() => {
           connect();
         }}
       >
         CONNECT WALLET
       </button>
-      <p className='text-white'> 지갑주소 : {account}</p>
-      
+      <p className="text-white">
+        지갑주소 : {account.substring(0, 4)}...
+        {account.substring(account.length - 4)}
+      </p>
     </div>
   );
 }
