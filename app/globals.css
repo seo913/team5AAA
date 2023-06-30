@@ -5,84 +5,83 @@
 /* @media all and (min-width:1440px){} */
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-ul, li {
-    list-style: none;
+ul,
+li {
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .wrap {
-    width: 100%;
-    overflow: hidden;
-    background-color: #1e1e1e;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1e1e1e;
 }
 
 .wrapSlim {
-    width: 70%;
-    margin: 0 auto;
+  width: 70%;
+  margin: 0 auto;
 }
 
 /* 소개1 */
 .introduce {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    margin-top: 50px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  margin-top: 50px;
 }
 
 .introWord {
-    width: 50%;
-    height: 500px;
-    /* background-color: rgba(200, 200, 200, 0.1);
+  width: 50%;
+  height: 500px;
+  /* background-color: rgba(200, 200, 200, 0.1);
     border-radius: 20px; */
-    /* border: 1px solid white; */
-    padding: 50px;
-    
+  /* border: 1px solid white; */
+  padding: 50px;
 }
 
-.introWord>h3 {
-    font-size: 24px;
-    font-weight: 900;
-    color: #fff;
-    
+.introWord > h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
 }
 
-.introWord>p {
-    margin-top: 50px;
-    font-size: 18px;
-    font-weight: 700;
-    color: gray;
+.introWord > p {
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  color: gray;
 }
 
 .introImg {
-    width: 50%;
-    height: 500px;
-    /* border: 1px solid white; */
-    position: relative;
+  width: 50%;
+  height: 500px;
+  /* border: 1px solid white; */
+  position: relative;
 }
 
 .imgbox {
-    width: 400px;
-    height: 400px;
-    background-color: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
 }
 
 .imgbox img {
-    width: 400px;
-    height: 400px;
-    /* position: absolute;
+  width: 400px;
+  height: 400px;
+  /* position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
@@ -90,280 +89,277 @@ a {
 
 /* 소개2 */
 .introduce2 {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    margin-top: 50px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  margin-top: 50px;
 }
 
 .introWord2 {
-    width: 50%;
-    height: 500px;
-    /* border: 1px solid white; */
-    padding: 50px;
+  width: 50%;
+  height: 500px;
+  /* border: 1px solid white; */
+  padding: 50px;
 }
 
-.introWord2>h3 {
-    font-size: 24px;
-    font-weight: 900;
-    color: #fff;
-    
+.introWord2 > h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
 }
 
-.introWord2>p {
-    margin-top: 50px;
-    font-size: 18px;
-    font-weight: 700;
-    color: gray;
+.introWord2 > p {
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  color: gray;
 }
 
 .introImg2 {
-    width: 50%;
-    height: 500px;
-    /* border: 1px solid white; */
-    position: relative;
+  width: 50%;
+  height: 500px;
+  /* border: 1px solid white; */
+  position: relative;
 }
 
 .imgbox2 {
-    width: 400px;
-    height: 400px;
-    background-color: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
 }
 
 .imgbox2 img {
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* 소개3 */
 .introduce3 {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    margin-top: 50px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  margin-top: 50px;
 }
 
 .introWord3 {
-    width: 50%;
-    height: 500px;
-    /* border: 1px solid white; */
-    padding: 50px;
+  width: 50%;
+  height: 500px;
+  /* border: 1px solid white; */
+  padding: 50px;
 }
 
-.introWord3>h3 {
-    font-size: 24px;
-    font-weight: 900;
-    color: #fff;
+.introWord3 > h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
 }
 
-.introWord3>p {
-    margin-top: 50px;
-    font-size: 18px;
-    font-weight: 700;
-    color: gray;
+.introWord3 > p {
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  color: gray;
 }
 
 .introImg3 {
-    width: 50%;
-    height: 500px;
-    /* border: 1px solid white; */
-    position: relative;
+  width: 50%;
+  height: 500px;
+  /* border: 1px solid white; */
+  position: relative;
 }
 
 .imgbox3 {
-    width: 400px;
-    height: 400px;
-    background-color: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
 }
 
 .imgbox3 img {
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* 소개4 */
 .introduce4 {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    margin-top: 50px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  margin-top: 50px;
 }
 
 .introWord4 {
-    width: 50%;
-    height: 500px;
-    /* border: 1px solid white; */
-    padding: 50px;
+  width: 50%;
+  height: 500px;
+  /* border: 1px solid white; */
+  padding: 50px;
 }
 
-.introWord4>h3 {
-    font-size: 24px;
-    font-weight: 900;
-    color: #fff;
-    
+.introWord4 > h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
 }
 
-.introWord4>p {
-    margin-top: 50px;
-    font-size: 18px;
-    font-weight: 700;
-    color: gray;
+.introWord4 > p {
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  color: gray;
 }
 
 .introImg4 {
-    width: 50%;
-    height: 500px;
-    /* border: 1px solid white; */
-    position: relative;
+  width: 50%;
+  height: 500px;
+  /* border: 1px solid white; */
+  position: relative;
 }
 
 .imgbox4 {
-    width: 400px;
-    height: 400px;
-    background-color: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
 }
 
 .imgbox4 img {
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* 팀 소개 */
 .team {
-    width: 100%;
-    height: 700px;
-    border: 5px solid #ddd;
-    border-radius: 10px;
-    margin-top: 50px;
-    padding: 20px;
+  width: 100%;
+  height: 700px;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 20px;
 }
 
-.team>p {
-    width: 100%;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+.team > p {
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
 }
 
 .teambox {
-    width: 100%;
-    height: 200px;
-    /* background-color: black; */
-    padding: 30px;
+  width: 100%;
+  height: 200px;
+  /* background-color: black; */
+  padding: 30px;
 }
 
 .teamImg {
-    width: 30%;
-    height: 200px;
-    float: left;
+  width: 30%;
+  height: 200px;
+  float: left;
 }
 
-.teamImg>img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+.teamImg > img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
 }
 
 .teamWord {
-    width: 60%;
-    height: 200px;
-    float: right;
-    /* border: 1px solid white; */
-    padding: 20px;
+  width: 60%;
+  height: 200px;
+  float: right;
+  /* border: 1px solid white; */
+  padding: 20px;
 }
 
-.teamWord>h3 {
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
+.teamWord > h3 {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
 }
 
-.teamWord>h2 {
-    font-size: 16px;
-    color: gray;
-    font-weight: 700;
+.teamWord > h2 {
+  font-size: 16px;
+  color: gray;
+  font-weight: 700;
 }
 
-.teamWord>p {
-    font-size: 14px;
-    color: rgb(212, 212, 212);
-    margin-top: 20px;
+.teamWord > p {
+  font-size: 14px;
+  color: rgb(212, 212, 212);
+  margin-top: 20px;
 }
-
 
 /* -------------------------------- */
 
 /* header */
 
 .header {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
 }
 
-.menubtn>img {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 30px;
-    left: 30px;
+.menubtn > img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
 }
 
 .logo img {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 25px;
-    left: 100px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 25px;
+  left: 100px;
 }
 
 .menu_close {
-    width: 100%;
-    position: relative;
-    top: 30px;
-    left: 30px;
+  width: 100%;
+  position: relative;
+  top: 30px;
+  left: 30px;
 }
 
-.menu_close>img {
-    width: 30px;
-    height: 30px;
+.menu_close > img {
+  width: 30px;
+  height: 30px;
 }
-
 
 .hidden_menu {
-    display: none;
-  }
-  
+  display: none;
+}
+
 .hidden_menu.show {
-    display: block;
+  display: block;
 }

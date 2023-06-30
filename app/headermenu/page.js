@@ -17,7 +17,7 @@ export default function Menu() {
 
   return (
     <div className=''>
-      <div className='header flex justify-between'>
+      <div className='header'>
         <div className='menu'>
           {isToggled ? null : (
             <div className='menubtn'>
@@ -51,7 +51,7 @@ export default function Menu() {
             </li>
           </ul>
         </div>
-        <div>
+        <div >
           <LoginForm />
         </div>
       </div>
