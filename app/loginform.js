@@ -22,9 +22,9 @@ export default function LoginForm() {
     }
   }
   
-  window.addEventListener('load', () => {
-    connect();
-  });
+  // window.addEventListener('load', () => {
+  //   connect();
+  // });
 
   return (
     <div >

@@ -85,21 +85,21 @@ const FileUpload = () => {
           },
         }
       );
-      console.log(res.data.IpfsHash);
+      console.log(res.data);
 
       const fileHash = res.data.IpfsHash;
 
       const time =
         type === 0
-          ? Math.floor(new Date().getTime() / 1000)
-          : Math.floor(new Date().getTime() / 1000) +
-            (selectedPeriod === "week"
-              ? 604800
-              : selectedPeriod === "month"
-              ? 2592000
-              : 31536000);
+          ? 0
+          : selectedPeriod === 'week'
+          ? 604800
+          : selectedPeriod === 'month'
+          ? 2592000
+          : 31536000;
       // });
-
+          const mintTime = new Date();
+          console.log(mintTime);
       const res2 = await axios.post(
         "https://api.pinata.cloud/pinning/pinJSONToIPFS",
         {
@@ -108,9 +108,11 @@ const FileUpload = () => {
             {
               content: content,
               type: type,
-              time: time,
+              time: mintTime,
             },
           ],
+          type: type, //nft 노말인지 타임캡슐인지
+          url: fileHash,
           image: `https://aqua-hushed-falcon-648.mypinata.cloud/ipfs/${fileHash}`,
         },
         {
@@ -119,15 +121,21 @@ const FileUpload = () => {
           },
         }
       );
+      const metadata = res2.data.IpfsHash;
+      // const timestamp = res2.data.Timestamp;
+      console.log(res2.data);
 
       const res3 = await contract.methods
-        .mintNft(
+        .mintNFT(
           `https://aqua-hushed-falcon-648.mypinata.cloud/ipfs/${res2.data.IpfsHash}`,
-          60
+          time
         )
         .send({ from: address });
       console.log(res2.data);
       alert("민팅이 완료되었습니다.");
+      console.log(res3);
+
+      alert('민팅이 완료되었습니다.');
     } catch (error) {
       console.log(error);
     }
