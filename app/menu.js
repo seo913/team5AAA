@@ -21,12 +21,15 @@ export default function Menu() {
           {isToggled ? null : (
             <div className="menubtn">
               <button onClick={toggleMenu}>
-                <img src="menu_open.svg" alt="메뉴버튼" />
+                <img
+                  src="menu_open.svg"
+                  alt="메뉴버튼"
+                  className="menu_color"
+                />
               </button>
             </div>
           )}
 
-          {/* 버튼 클릭시 나오는 메뉴 */}
           <ul className={isToggled ? "hidden_menu show" : "hidden_menu"}>
             <div className="menu_close">
               <button onClick={closeMenu}>
@@ -34,21 +37,47 @@ export default function Menu() {
               </button>
             </div>
 
-            <li className="menu_list">
-              <Link href="/" className="">
-                Home
-              </Link>
-            </li>
-            <li className="menu_list">
-              <Link href="/mint">Mint</Link>
-            </li>
-            <li className="menu_list">
-              <Link href="/all">All</Link>
-            </li>
-            <li className="menu_list">
-              <Link href="/mypage">My Page</Link>
-            </li>
+            <div className="menu_box">
+              <li className="menu_list">
+                <Link href="/" className="list_color">
+                  Home
+                </Link>
+              </li>
+              <li className="menu_list">
+                <Link href="/mint" className="list_color">
+                  Mint
+                </Link>
+              </li>
+              <li className="menu_list">
+                <Link href="/all" className="list_color">
+                  All
+                </Link>
+              </li>
+              <li className="menu_list">
+                <Link href="/mypage" className="list_color">
+                  My Page
+                </Link>
+              </li>
+            </div>
           </ul>
+        </div>
+
+        {/* <div className="logo">
+          <img src="logo_1-3.png" alt="로고"/>
+        </div> */}
+
+        <div className="header_video">
+          <video autoPlay muted loop>
+            <source src="/video/banner1.mp4" type="video/mp4" />
+          </video>
+          <div className="video_font">
+            <p>Time Snap</p>
+          </div>
+        </div>
+
+        <div className="wallet">
+          <img src="metamask.svg" alt="메타마스크" />
+          <Link href="/">Connect Wallet</Link>
         </div>
       </div>
     </div>
