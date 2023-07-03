@@ -10,7 +10,9 @@ import { useRouter } from "next/navigation";
 export default function All() {
   const web3 = new Web3(window.ethereum);
   const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
+  console.log(contract);
   const [metadataList, setMetadataList] = useState([]);
+  const [tokenIds, setTokenIds] = useState([]);
 
   useEffect(() => {
     fetchAllNFTs();
@@ -20,7 +22,7 @@ export default function All() {
     try {
       const totalSupply = await contract.methods.totalSupply().call();
       // console.log(totalSupply);
-      const startFromIndex = BigInt(11);
+      const startFromIndex = BigInt(0);
       // console.log(startFromIndex);
 
       const endAtIndex = BigInt(totalSupply) - BigInt(1);
@@ -32,25 +34,25 @@ export default function All() {
         // console.log(id);
         ids.push(id);
       }
+
+      setTokenIds(ids);
       // console.log(ids);
 
       const metadataList = await Promise.all(
         ids.map(async (id) => {
           const tokenURI = await contract.methods.tokenURI(id).call();
           const response = await axios.get(tokenURI);
-          console.log(response);
+
+          // console.log(response);
           return response.data;
         })
       );
-      // const filteredMetadataList = metadataList.filter((metadata) => metadata);
-      // setMetadataList(filteredMetadataList);
-      setMetadataList(metadataList);
+      const filteredMetadataList = metadataList.filter((metadata) => metadata);
+      setMetadataList(filteredMetadataList);
+      // setMetadataList(metadataList);
 
-      console.log(metadataList);
+      // console.log(metadataList);
       // console.log(metadataList[0]);
-
-      // console.log(metadataList[1].description[0].type);
-      // console.log(metadataList[11].url);
     } catch (error) {
       console.error(error);
     }
