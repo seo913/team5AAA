@@ -16,7 +16,7 @@ export default function Normal() {
 
   const [tokenIds, setTokenIds] = useState();
 
-  // 내가 가진 nft 가져오기
+  // 내가 가진 nft tokenId 가져오기
   const getMyNft = async () => {
     try {
       // contract가 없거나 account가 없으면 해당 함수 빠져나감
@@ -42,7 +42,7 @@ export default function Normal() {
   }, [account]);
 
   return (
-    <div>
+    <div className="flex">
       {tokenIds?.reverse().map((v, i) => {
         return <NftCard key={i} tokenId={v} />;
       })}

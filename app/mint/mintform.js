@@ -92,14 +92,14 @@ const FileUpload = () => {
       const time =
         type === 0
           ? 0
-          : selectedPeriod === 'week'
+          : selectedPeriod === "week"
           ? 604800
-          : selectedPeriod === 'month'
+          : selectedPeriod === "month"
           ? 2592000
           : 31536000;
       // });
-          const mintTime = new Date();
-          console.log(mintTime);
+      const mintTime = new Date();
+      console.log(mintTime);
       const res2 = await axios.post(
         "https://api.pinata.cloud/pinning/pinJSONToIPFS",
         {
@@ -107,12 +107,11 @@ const FileUpload = () => {
           description: [
             {
               content: content,
-              type: type,
               time: mintTime,
             },
           ],
           type: type, //nft 노말인지 타임캡슐인지
-          url: fileHash,
+          account: address,
           image: `https://aqua-hushed-falcon-648.mypinata.cloud/ipfs/${fileHash}`,
         },
         {
@@ -135,7 +134,7 @@ const FileUpload = () => {
       alert("민팅이 완료되었습니다.");
       console.log(res3);
 
-      alert('민팅이 완료되었습니다.');
+      alert("민팅이 완료되었습니다.");
     } catch (error) {
       console.log(error);
     }

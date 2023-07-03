@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { CONTRACT_ABI, CONTRACT_ADDRESS } from '@/pages/api/web3.config';
-import { useEffect, useState } from 'react';
-import Web3 from 'web3';
-import axios from 'axios';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { CONTRACT_ABI, CONTRACT_ADDRESS } from "@/pages/api/web3.config";
+import { useEffect, useState } from "react";
+import Web3 from "web3";
+import axios from "axios";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function All() {
   const web3 = new Web3(window.ethereum);
@@ -58,21 +58,21 @@ export default function All() {
 
   return (
     <>
-      <div className='min-h-screen border '>
-        <div className='flex gap-5 ml-10 mt-20'>
-          <div className='border flex border-black pb-5 '>
+      <div className="min-h-screen border ">
+        <div className="flex gap-5 ml-10 mt-20">
+          <div className="border flex border-black pb-5 ">
             {metadataList
               .filter((metadata) => metadata.description[0].type === 0) // description type이 0인 것만 필터링 0은 일반
               .map((metadata, index) => (
-                <div key={index} className='w-60 h-60  '>
+                <div key={index} className="w-60 h-60  ">
                   <Link href={`/detail/${metadataList[index].url}`}>
                     <img
                       src={metadata.image}
-                      alt='NFT'
-                      className='w-60 h-52 gap-10'
+                      alt="NFT"
+                      className="w-60 h-52 gap-10"
                     />
                   </Link>
-                  <p className='font-semibold p-1'>제목 : {metadata.name}</p>
+                  <p className="font-semibold p-1">제목 : {metadata.name}</p>
                 </div>
               ))}
           </div>
