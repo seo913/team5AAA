@@ -3,6 +3,8 @@ import Web3 from "web3";
 import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 const NftCard = ({ tokenId }) => {
   const web3 = new Web3(window.ethereum);
@@ -11,19 +13,19 @@ const NftCard = ({ tokenId }) => {
 
   const getNftMetadata = async () => {
     try {
-      // const getTokenURI = await contract.methods.tokenURI(`${tokenId}`).call();
       const getTokenURI = await contract.methods
         .metadataUri(`${tokenId}`)
         .call();
-
       const response = await axios.get(getTokenURI);
+
+      // 리빌 상태에 따른 이미지 가져오기
+      const getTokenImg = await contract.methods
+        .tokenURI(`${tokenId}`)
+        .call();
+      const response2 = await axios.get(getTokenImg);
 
       let nftArray = [];
 
-      // setNft();
-      console.log(response.data);
-
-      // 데이터 어레이 더 만들기 7/1
       nftArray.push({
         tokenId,
         name: response.data.name,
@@ -31,10 +33,9 @@ const NftCard = ({ tokenId }) => {
         type: response.data.type,
         accountAddress: response.data.account,
         time: response.data.description[0].time,
-        image: response.data.image,
+        image: response2.data.image,
       });
 
-      // console.log(response);
       setNft(nftArray);
     } catch (error) {
       console.error(error);
@@ -51,23 +52,39 @@ const NftCard = ({ tokenId }) => {
   }, [nft]);
 
   return (
-    <div className="m-3">
+    <div className="m-2">
       {nft && nft[0] && (
         <div>
-          <div>이름: {nft[0].name} </div>
-          <div>콘텐츠: {nft[0].content} </div>
-          <div>타입: {nft[0].type} </div>
-          <div>시간: {nft[0].time} </div>
-          <div>어카운트: {nft[0].accountAddress} </div>
-          <div>
-            이미지:
-            <Image
-              src={nft[0].image}
-              alt="NFT Image"
-              width={200}
-              height={200}
-            />
-          </div>
+          <Carousel
+            showArrows={true}
+            showStatus={false}
+            showIndicators={false}
+            showThumbs={false}
+          >
+            <div className="flex justify-center ">
+              <Image
+                src={nft[0].image}
+                alt="NFT Image"
+                width={250}
+                height={250}
+                className="rounded-xl"
+              />
+            </div>
+            <div className="font-Jalnan pt-4 text-center flex flex-col">
+              <div className="bg-zinc-800 text-slate-400 p-2 mt-2 rounded-3xl text-sm ">
+                <div className="pl-2 text-white">{nft[0].name}</div>
+                <div>{nft[0].content}</div>
+                <div>Reveal-Type: {nft[0].type} </div>
+                <div>Time: {nft[0].time} </div>
+                <div>
+                  Account: {nft[0].accountAddress.substring(0, 4)}...
+                  {nft[0].accountAddress.substring(
+                    nft[0].accountAddress.length - 4
+                  )}
+                </div>
+              </div>
+            </div>
+          </Carousel>
         </div>
       )}
     </div>

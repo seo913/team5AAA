@@ -6,6 +6,8 @@ import { AppContext } from "../layout";
 import Web3 from "web3";
 import axios from "axios";
 import NftCard from "@/components/NftCard";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 export default function Normal() {
   const web3 = new Web3(window.ethereum);
@@ -42,10 +44,53 @@ export default function Normal() {
   }, [account]);
 
   return (
-    <div className="flex">
-      {tokenIds?.reverse().map((v, i) => {
-        return <NftCard key={i} tokenId={v} />;
-      })}
-    </div>
+    <>
+      <div className="mx-20">
+        <div className="font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center">
+          Mypage
+        </div>
+        <Carousel
+          showArrows={true}
+          autoPlay={true}
+          infiniteLoop={true}
+          showStatus={true}
+          showIndicators={true}
+          showThumbs={false}
+          centerMode={true}
+          centerSlidePercentage={31}
+        >
+          {tokenIds?.reverse().map((v, i) => {
+            return (
+              <div className="px-10">
+                <NftCard key={i} tokenId={v} />
+              </div>
+            );
+          })}
+        </Carousel>
+      </div>
+      <div className="mx-20">
+        <div className="font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center">
+          Time Capsule
+        </div>
+        <Carousel
+          showArrows={true}
+          autoPlay={true}
+          infiniteLoop={true}
+          showStatus={true}
+          showIndicators={true}
+          showThumbs={false}
+          centerMode={true}
+          centerSlidePercentage={31}
+        >
+          {tokenIds?.reverse().map((v, i) => {
+            return (
+              <div className="px-10">
+                <NftCard key={i} tokenId={v} />
+              </div>
+            );
+          })}
+        </Carousel>
+      </div>
+    </>
   );
 }
