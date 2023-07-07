@@ -78,12 +78,9 @@ export default function Menu() {
 
         <div className="wallet">
           <img src="metamask.svg" alt="메타마스크" />
-          <Link href="/">Connect Wallet</Link>
-        </div>
-
-        <div >
           <LoginForm />
         </div>
+
       </div>
     </div>
   );

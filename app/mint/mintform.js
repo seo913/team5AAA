@@ -1,39 +1,41 @@
-"use client";
-import { useState } from "react";
-import axios from "axios";
-import Web3 from "web3";
-import { CONTRACT_ABI, CONTRACT_ADDRESS } from "@/pages/api/web3.config";
+'use client';
+import { useState } from 'react';
+import axios from 'axios';
+import Web3 from 'web3';
+import { CONTRACT_ABI, CONTRACT_ADDRESS } from '@/pages/api/web3.config';
+import { useRouter } from 'next/navigation';
 
 const FileUpload = () => {
-  const PINATA_JWT = process.env.NEXT_PUBLIC_PINATA_JWT;
-  const [selectedFile, setSelectedFile] = useState();
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const router = useRouter(); // 페이지 이동 기능
+  const PINATA_JWT = process.env.NEXT_PUBLIC_PINATA_JWT; //피나타 api jwt
+  const [selectedFile, setSelectedFile] = useState();  //파일 업로드
+  const [title, setTitle] = useState(''); //제목
+  const [content, setContent] = useState(''); //내용
   const [file, setFile] = useState(); // 미리 보여주는 이미지
-  const [isCheckedNormal, setIsCheckedNormal] = useState(false);
-  const [isCheckedTimeCapsule, setIsCheckedTimeCapsule] = useState(false);
+  const [isCheckedNormal, setIsCheckedNormal] = useState(false); //노말타입체크
+  const [isCheckedTimeCapsule, setIsCheckedTimeCapsule] = useState(false); //타임캡슐타입체크
 
   const [type, setType] = useState(0); //타입설정
 
-  const web3 = new Web3(window.ethereum);
+  const web3 = new Web3(window.ethereum); // 이더리움연결
   // console.log(web3);
-  const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
+  const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS); //컨트랙트,abi연결
   // console.log(contract);
 
-  const changeHandler = (event) => {
+  const changeHandler = (event) => { //어떤 추억인지 
     setSelectedFile(event.target.files[0]);
     setFile(event.target.files[0]);
   };
 
-  const handleTitleChange = (event) => {
+  const handleTitleChange = (event) => { //추억의 제목을 설정할수있게
     setTitle(event.target.value);
   };
 
-  const handleContentChange = (event) => {
+  const handleContentChange = (event) => { //추억의 내용을 설정할수있게
     setContent(event.target.value);
   };
 
-  const handleCheckboxChange = (event) => {
+  const handleCheckboxChange = (event) => { // 추억의 타입이 0이면 일반 노말로 선택이 되고 타입이 1이면 타임캡슐로 설정을 할 수 있게
     const { name } = event.target;
     if (name === "normal") {
       setIsCheckedNormal(true);
@@ -46,13 +48,15 @@ const FileUpload = () => {
     }
   };
 
-  const [selectedPeriod, setSelectedPeriod] = useState("week");
+  const [selectedPeriod, setSelectedPeriod] = useState('week'); //타임캡슐 기간 단위를 설정하는 것
 
-  const handlePeriodChange = (event) => {
+  const handlePeriodChange = (event) => { //타임캡슐 기능 버튼 클릭할 수 있게
     setSelectedPeriod(event.target.value);
   };
 
-  const handleSubmission = async () => {
+  const handleSubmission = async () => { //민팅버튼 
+    alert('민팅을 진행하시려면 확인을 누르고 잠시만 기다려주세요.');
+
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
@@ -132,7 +136,8 @@ const FileUpload = () => {
         .send({ from: address });
 
       // console.log(res2.data);
-      alert("민팅이 완료되었습니다.");
+      alert('민팅이 완료되었습니다.');
+      router.push('/');
       console.log(res3);
     } catch (error) {
       console.log(error);

@@ -1,7 +1,10 @@
-import All from "./allform";
+import All from './allform';
 
-export default function Allpage(){
-    return(
-        <All/>
-    )
+export default function Allpage() {
+  return (
+    <div className='min-h-screen wrap ' >
+        
+      <All />;
+    </div>
+  );
 }
