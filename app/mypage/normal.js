@@ -6,8 +6,9 @@ import { AppContext } from "../layout";
 import Web3 from "web3";
 import axios from "axios";
 import NftCard from "@/components/NftCard";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import Carousel2 from "@christian-martins/react-grid-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import { Carousel } from "react-responsive-carousel";
 
 export default function Normal() {
   const web3 = new Web3(window.ethereum);
@@ -19,7 +20,7 @@ export default function Normal() {
   const [tokenIds, setTokenIds] = useState();
 
   // 내가 가진 nft tokenId 가져오기
-  const getMyNft = async () => {
+  const getTokenIds = async () => {
     try {
       // contract가 없거나 account가 없으면 해당 함수 빠져나감
       if (!contract || !account) return;
@@ -38,9 +39,8 @@ export default function Normal() {
     }
   };
 
-  // getMyNft는 account에 따라 달라지기 때문에 따로 만들고 의존성 배열 추가
   useEffect(() => {
-    getMyNft();
+    getTokenIds();
   }, [account]);
 
   return (
@@ -49,25 +49,19 @@ export default function Normal() {
         <div className="font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center">
           Mypage
         </div>
-        <Carousel
-          showArrows={true}
-          autoPlay={true}
-          infiniteLoop={true}
-          showStatus={true}
-          showIndicators={true}
-          showThumbs={false}
-          centerMode={true}
-          centerSlidePercentage={31}
-        >
+        <Carousel2 cols={3} rows={2} gap={10} loop={true} autoplay={5000}>
           {tokenIds?.reverse().map((v, i) => {
             return (
-              <div className="px-10">
-                <NftCard key={i} tokenId={v} />
-              </div>
+              <Carousel2.Item key={i}>
+                <div className="px-10">
+                  <NftCard tokenId={v} />
+                </div>
+              </Carousel2.Item>
             );
           })}
-        </Carousel>
+        </Carousel2>
       </div>
+      {/* 
       <div className="mx-20">
         <div className="font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center">
           Time Capsule
@@ -90,7 +84,7 @@ export default function Normal() {
             );
           })}
         </Carousel>
-      </div>
+      </div> */}
     </>
   );
 }

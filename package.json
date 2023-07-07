@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@christian-martins/react-grid-carousel": "^1.0.3",
     "@pinata/sdk": "^2.1.0",
     "autoprefixer": "10.4.14",
     "aws-sdk": "^2.1398.0",

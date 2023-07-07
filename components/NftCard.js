@@ -13,16 +13,18 @@ const NftCard = ({ tokenId }) => {
 
   const getNftMetadata = async () => {
     try {
-      const getTokenURI = await contract.methods
+      const getmetadataUri = await contract.methods
         .metadataUri(`${tokenId}`)
         .call();
-      const response = await axios.get(getTokenURI);
+      const response = await axios.get(getmetadataUri);
 
       // 리빌 상태에 따른 이미지 가져오기
       const getTokenImg = await contract.methods
         .tokenURI(`${tokenId}`)
         .call();
       const response2 = await axios.get(getTokenImg);
+
+      // console.log(response2.data.image);
 
       let nftArray = [];
 
@@ -47,9 +49,9 @@ const NftCard = ({ tokenId }) => {
   }, []);
 
   // tokenId와 metadata가 담긴 nftArray 확인
-  useEffect(() => {
-    // console.log(nft);
-  }, [nft]);
+  // useEffect(() => {
+  //   console.log(nft);
+  // }, [nft]);
 
   return (
     <div className="m-2">
