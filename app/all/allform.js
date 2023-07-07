@@ -1,14 +1,11 @@
 'use client';
 
-import { CONTRACT_ABI, CONTRACT_ADDRESS } from '@/pages/api/web3.config';
 import { useEffect, useState } from 'react';
-import Web3 from 'web3';
 import axios from 'axios';
 import Link from 'next/link';
+import { contract } from '@/pages/api/web3.config';
 
 export default function All() {
-  const web3 = new Web3(window.ethereum);
-  const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
   // console.log(contract);
   const [metadataList, setMetadataList] = useState([]);
   const [tokenIds, setTokenIds] = useState([]);
@@ -79,7 +76,7 @@ export default function All() {
         <div className='flex justify-center font-Jalnan text-2xl'>
           <p className='mt-10'>ALL PAGE</p>
         </div>
-        
+
         <div className='flex flex-wrap gap-5 justify-center'>
           {isLoading ? (
             <div className='flex items-center justify-center w-full h-full'>

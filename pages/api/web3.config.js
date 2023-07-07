@@ -1,3 +1,6 @@
+import { Web3 } from 'web3';
+import { MetaMaskSDK } from '@metamask/sdk';
+
 export const CONTRACT_ADDRESS = '0x8398B35Df469F12E3346e71b0aC3c14b1F0F7cec';
 
 export const CONTRACT_ABI = [
@@ -607,3 +610,15 @@ export const CONTRACT_ABI = [
     type: 'function',
   },
 ];
+
+const MMSDK = new MetaMaskSDK({
+  dappMetadata: {
+    name: 'Project',
+    url: 'https://0707dapp-ozm9.vercel.app',
+  },
+});
+const ethereum = MMSDK.getProvider();
+
+export const web3 = new Web3(ethereum);
+
+export const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);

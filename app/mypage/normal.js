@@ -1,17 +1,15 @@
 'use client';
 
-import { CONTRACT_ABI, CONTRACT_ADDRESS } from '@/pages/api/web3.config';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../layout';
-import Web3 from 'web3';
 import axios from 'axios';
 import NftCard from '@/components/NftCard';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import { contract } from '@/pages/api/web3.config';
 
 export default function Normal() {
-  const web3 = new Web3(window.ethereum);
-  const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
+ 
 
   //props account
   const { account } = useContext(AppContext);

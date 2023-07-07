@@ -1,15 +1,13 @@
 'use client';
 import { useParams, useRouter } from 'next/navigation';
-import { CONTRACT_ABI, CONTRACT_ADDRESS } from '@/pages/api/web3.config';
 import Web3 from 'web3';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { contract } from '@/pages/api/web3.config';
 
 export default function Detail() {
   const router = useRouter();
 
-  const web3 = new Web3(window.ethereum);
-  const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
   // console.log(contract);
   const { id } = useParams();
   const [nft, setNft] = useState();
