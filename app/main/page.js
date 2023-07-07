@@ -11,13 +11,13 @@ export default function Main() {
 
   return (
     <div className="wrap">
-      <span className="shape"></span>
-      <span className="shape"></span>
-      <span className="shape"></span>
-      <span className="shape"></span>
-      <span className="shape"></span>
-      <span className="shape"></span>
-      <div className="wrapSlim">
+      {/* <span className="shape"></span> */}
+      {/* <span className="shape"></span> */}
+      {/* <span className="shape"></span> */}
+      {/* <span className="shape"></span> */}
+      {/* <span className="shape"></span> */}
+      {/* <span className="shape"></span> */}
+      <div className="wrapSlim">  
         {/* 소개1 */}
         <div className="introduce">
           <div className="introWord">
