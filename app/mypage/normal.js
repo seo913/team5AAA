@@ -1,16 +1,14 @@
-'use client';
+"use client";
 
-import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../layout';
-import axios from 'axios';
-import NftCard from '@/components/NftCard';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-import { contract } from '@/pages/api/web3.config';
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../layout";
+import axios from "axios";
+import NftCard from "@/components/NftCard";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import { contract } from "@/pages/api/web3.config";
 
 export default function Normal() {
- 
-
   //props account
   const { account } = useContext(AppContext);
 
@@ -43,8 +41,8 @@ export default function Normal() {
 
   return (
     <>
-      <div className='mx-20'>
-        <div className='font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center'>
+      <div className="mx-20">
+        <div className="font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center">
           Mypage
         </div>
         <Carousel
@@ -59,35 +57,17 @@ export default function Normal() {
         >
           {tokenIds?.reverse().map((v, i) => {
             return (
-              <div className='px-10' key={i}>
+              <div className="px-10" key={i}>
                 <NftCard tokenId={v} />
               </div>
             );
           })}
         </Carousel>
       </div>
-      <div className='mx-20'>
-        <div className='font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center'>
+      <div className="mx-20">
+        <div className="font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center">
           Time Capsule
         </div>
-        <Carousel
-          showArrows={true}
-          autoPlay={true}
-          infiniteLoop={true}
-          showStatus={true}
-          showIndicators={true}
-          showThumbs={false}
-          centerMode={true}
-          centerSlidePercentage={31}
-        >
-          {tokenIds?.reverse().map((v, i) => {
-            return (
-              <div className='px-10' key={i}>
-                <NftCard tokenId={v} />
-              </div>
-            );
-          })}
-        </Carousel>
       </div>
     </>
   );
