@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { CONTRACT_ABI, CONTRACT_ADDRESS } from "@/pages/api/web3.config";
-import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../layout";
-import Web3 from "web3";
-import axios from "axios";
-import NftCard from "@/components/NftCard";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import { CONTRACT_ABI, CONTRACT_ADDRESS } from '@/pages/api/web3.config';
+import { useContext, useEffect, useState } from 'react';
+import { AppContext } from '../layout';
+import Web3 from 'web3';
+import axios from 'axios';
+import NftCard from '@/components/NftCard';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 export default function Normal() {
   const web3 = new Web3(window.ethereum);
@@ -45,8 +45,8 @@ export default function Normal() {
 
   return (
     <>
-      <div className="mx-20">
-        <div className="font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center">
+      <div className='mx-20'>
+        <div className='font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center'>
           Mypage
         </div>
         <Carousel
@@ -61,15 +61,15 @@ export default function Normal() {
         >
           {tokenIds?.reverse().map((v, i) => {
             return (
-              <div className="px-10">
-                <NftCard key={i} tokenId={v} />
+              <div className='px-10' key={i}>
+                <NftCard tokenId={v} />
               </div>
             );
           })}
         </Carousel>
       </div>
-      <div className="mx-20">
-        <div className="font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center">
+      <div className='mx-20'>
+        <div className='font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center'>
           Time Capsule
         </div>
         <Carousel
@@ -84,8 +84,8 @@ export default function Normal() {
         >
           {tokenIds?.reverse().map((v, i) => {
             return (
-              <div className="px-10">
-                <NftCard key={i} tokenId={v} />
+              <div className='px-10' key={i}>
+                <NftCard tokenId={v} />
               </div>
             );
           })}
