@@ -51,26 +51,27 @@ const NftCard = ({ tokenId }) => {
   }, [nft]);
 
   return (
-    <div className="m-2">
+    <div className="w-[350px]">
       {nft && nft[0] && (
-        <div>
+        // 여기 안쪽에서 뭔가 사진이나 글씨쪽을 고정시키면 될거 같음
+        <div> 
           <Carousel
             showArrows={true}
             showStatus={false}
             showIndicators={false}
             showThumbs={false}
           >
-            <div className="flex justify-center ">
+            <div>
               <Image
                 src={nft[0].image}
                 alt="NFT Image"
-                width={250}
-                height={250}
+                width={350}
+                height={350}
                 className="rounded-xl"
               />
             </div>
-            <div className="font-Jalnan pt-4 text-center flex flex-col">
-              <div className="bg-zinc-800 text-slate-400 p-2 mt-2 rounded-3xl text-sm ">
+            <div className="font-Jalnan pt-4 text-center w-[350px]">
+              <div className="bg-zinc-800 text-slate-400 p-2 mt-2 rounded-3xl text-sm w-[350px]">
                 <div className="pl-2 text-white">{nft[0].name}</div>
                 <div>{nft[0].content}</div>
                 <div>Reveal-Type: {nft[0].type} </div>
