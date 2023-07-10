@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../layout";
-import NftCard from "@/components/NftCard";
-import { contract } from "@/pages/api/web3.config";
-import Carousel from "@christian-martins/react-grid-carousel";
+import { useContext, useEffect, useState } from 'react';
+import { AppContext } from '../layout';
+import NftCard from '@/components/NftCard';
+import { contract } from '@/pages/api/web3.config';
+import Carousel from '@christian-martins/react-grid-carousel';
 
 export default function Normal() {
   //props account
@@ -39,15 +39,23 @@ export default function Normal() {
 
   return (
     <>
-      <div className="mx-20">
-        <div className="font-Jalnan text-3xl pt-5 pb-2 text-white flex justify-center">
+      <div className='mx-20'>
+        <div
+          className='font-Jalnan text-3xl pt-5 pb-2  flex justify-center'
+          style={{
+            background: 'linear-gradient(to right, pink, white)',
+            borderImage: 'linear-gradient(to right, pink, white) 1',
+            WebkitTextFillColor: 'transparent',
+            WebkitBackgroundClip: 'text',
+          }}
+        >
           Mypage
         </div>
         <Carousel cols={3} rows={2} gap={30}>
           {tokenIds?.reverse().map((v, i) => {
             return (
               <Carousel.Item key={i}>
-                  <NftCard  tokenId={v}/>
+                <NftCard tokenId={v} />
               </Carousel.Item>
             );
           })}
