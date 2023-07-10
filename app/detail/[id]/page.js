@@ -74,117 +74,123 @@ export default function Detail() {
       const month = date.getMonth() + 1; // 월 (0부터 시작하므로 +1 필요)
       const day = date.getDate(); // 일
 
-      const formattedDate = `${year}.0${month}.0${day}`;
+      const formattedDate = `${year}.0${month}.${day}`;
       setFormattedTime(formattedDate);
     }
   }, [nft]);
 
   return (
-    <div className=' min-h-screen wrap '>
-      {/* <div className='shape'></div>
-        <div className='shape'> </div>
-        <div className='shape'></div> */}
-      <div className='flex justify-center font-Jalnan text-2xl '>
-        <p
-          className='mt-10'
-          style={{
-            background: 'linear-gradient(to right, pink, white)',
-            borderImage: 'linear-gradient(to right, pink, white) 1',
-            WebkitTextFillColor: 'transparent',
-            WebkitBackgroundClip: 'text',
-          }}
-        >
-          DETAIL PAGE
-        </p>
-      </div>
-      <div className='flex justify-center items-center mt-40'>
-        {nft && (
-          <div>
-            <div className='flex rounded-lg  backdrop-blur-sm bg-gradient-to-r from-purple-500 to-transparent gap-5 shadow-xl shadow-purple-900 w-[900px] h-[500px]'>
-              <div className='flex flex-col justify-center items-center  mb-4'>
-                <p
-                  className='mb-3 font-semibold text-2xl'
-                  style={{
-                    background: 'linear-gradient(to right, pink, white)',
-                    borderImage: 'linear-gradient(to right, pink, white) 1',
-                    WebkitTextFillColor: 'transparent',
-                    WebkitBackgroundClip: 'text',
-                  }}
-                >
-                  TITLE: {nft.name}
-                </p>
-                <img
-                  src={nft.image}
-                  alt='NFT Image'
-                  className='ml-5 w-[300px] h-[300px] rounded-lg shadow-xl shadow-black'
-                />
-                <div className='flex justify-center items-center mt-2 text-xl font-semibold '>
-                  <button
-                    className='mr-2 mt-10 rounded-md border-0'
+    <>
+      <div className=' min-h-screen wrap  '>
+        <span className='shape '></span>
+        <span className='shape'></span>
+        <span className='shape '></span>
+        <span className='shape'></span>
+        {/* <div className='shape'></div> */}
+        <div className='flex justify-center font-Jalnan text-2xl '>
+          <p
+            className='mt-10'
+            style={{
+              background: 'linear-gradient(to right, pink, white)',
+              borderImage: 'linear-gradient(to right, pink, white) 1',
+              WebkitTextFillColor: 'transparent',
+              WebkitBackgroundClip: 'text',
+            }}
+          >
+            DETAIL PAGE
+          </p>
+        </div>
+        <div className='flex justify-center items-center mt-40'>
+          {nft && (
+            <div>
+              <div className='flex rounded-lg  backdrop-blur-sm bg-gradient-to-r from-purple-500 to-transparent gap-5 shadow-lg shadow-purple-500 w-[900px] h-[500px]'>
+                <div className='flex flex-col justify-center items-center  mb-4'>
+                  <p
+                    className='mb-3 text-2xl font-bold'
                     style={{
                       background: 'linear-gradient(to right, pink, white)',
                       borderImage: 'linear-gradient(to right, pink, white) 1',
                       WebkitTextFillColor: 'transparent',
                       WebkitBackgroundClip: 'text',
                     }}
-                    onClick={() => {
-                      router.back();
+                  >
+                    {nft.name}
+                  </p>
+
+                  <img
+                    src={nft.image}
+                    alt='NFT Image'
+                    className='ml-5 w-[300px] h-[300px] rounded-lg shadow-xl shadow-black'
+                  />
+                  <div className='flex justify-center items-center mt-2 text-xl font-semibold   '>
+                    <button
+                      className='pl-14 mr-10 mt-10 rounded-md border-0'
+                      style={{
+                        background: 'linear-gradient(to right, pink, white)',
+                        borderImage: 'linear-gradient(to right, pink, white) 1',
+                        WebkitTextFillColor: 'transparent',
+                        WebkitBackgroundClip: 'text',
+                      }}
+                      onClick={() => {
+                        router.back();
+                      }}
+                    >
+                      BACK
+                    </button>
+                    {isOwner && (
+                      <button
+                        onClick={deleteNft}
+                        className='mt-[37px] mr-4 rounded-md border-0 text-purple-900'
+                        // style={{
+                        //   background: 'linear-gradient(to right, purple, purple)',
+                        //   borderImage: 'linear-gradient(to right, purple, purple) 1',
+                        //   WebkitTextFillColor: 'transparent',
+                        //   WebkitBackgroundClip: 'text',
+                        // }}
+                      >
+                        DELETE
+                      </button>
+                    )}
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    className='mr-1 mt-[68px] rounded-md border-0 text-lg font-semibold '
+                    style={{
+                      background: 'linear-gradient(to right, pink, white)',
+                      borderImage: 'linear-gradient(to right, pink, white) 1',
+                      WebkitTextFillColor: 'transparent',
+                      WebkitBackgroundClip: 'text',
                     }}
                   >
-                    BACK
-                  </button>
-                  {isOwner && (
-                    <button
-                      onClick={deleteNft}
-                      className='mt-10 rounded-md border-0'
-                      style={{
-                        background: 'linear-gradient(to right, pink, white)',
-                        borderImage: 'linear-gradient(to right, pink, white) 1',
-                        WebkitTextFillColor: 'transparent',
-                        WebkitBackgroundClip: 'text',
-                      }}
-                    >
-                      DELETE
-                    </button>
-                  )}
-                </div>
-              </div>
-
-              <div>
-                <div
-                  className='mr-1 mt-[68px] rounded-md border-0 text-lg font-semibold '
-                  style={{
-                    background: 'linear-gradient(to right, pink, white)',
-                    borderImage: 'linear-gradient(to right, pink, white) 1',
-                    WebkitTextFillColor: 'transparent',
-                    WebkitBackgroundClip: 'text',
-                  }}
-                >
-                  <p className='mb-3'>TYPE: {nft.type}</p>
-                  <p className='mb-3'>CREATED TIMESNAP: {formattedTime}</p>
-                  <p className='mb-8'>
-                    OWNER: <span> {nft.account}</span>
-                  </p>
-                  <p className='ml-[2px]'>DESCRIPTION</p>
-                  <div className='w-[540px] h-[165px] bg-gray-300 bg-opacity-10 rounded-lg shadow-inner shadow-purple-900'>
-                    <p
-                      className='mb-3 pt-2 pl-2'
-                      style={{
-                        background: 'linear-gradient(to right, pink, white)',
-                        borderImage: 'linear-gradient(to right, pink, white) 1',
-                        WebkitTextFillColor: 'transparent',
-                        WebkitBackgroundClip: 'text',
-                      }}
-                    >
-                      {nft.description}
+                    <p className='mb-3'>TYPE : {nft.type}</p>
+                    <p className='mb-3'>CREATED TIMESNAP : {formattedTime}</p>
+                    <p className='mb-8'>
+                      OWNER : <span> {nft.account}</span>
                     </p>
+                    <p className='ml-[2px]'>DESCRIPTION</p>
+                    <div className='w-[540px] h-[165px] bg-gray-300 bg-opacity-10 rounded-lg shadow-inner shadow-purple-900'>
+                      <p
+                        className='mb-3 pt-2 pl-2'
+                        style={{
+                          background: 'linear-gradient(to right, pink, white)',
+                          borderImage:
+                            'linear-gradient(to right, pink, white) 1',
+                          WebkitTextFillColor: 'transparent',
+                          WebkitBackgroundClip: 'text',
+                        }}
+                      >
+                        {nft.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

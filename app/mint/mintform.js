@@ -2,9 +2,12 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Web3 from 'web3';
-import { CONTRACT_ABI, CONTRACT_ADDRESS, contract } from '@/pages/api/web3.config';
+import {
+  CONTRACT_ABI,
+  CONTRACT_ADDRESS,
+  contract,
+} from '@/pages/api/web3.config';
 import { useRouter } from 'next/navigation';
-
 
 const FileUpload = () => {
   const router = useRouter(); // 페이지 이동 기능

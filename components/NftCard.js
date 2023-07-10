@@ -1,13 +1,12 @@
-
-import axios from "axios";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import { contract } from "@/pages/api/web3.config";
+import axios from 'axios';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+// import { Carousel2 } from '@christian-martins/react-grid-carousel';
+import { contract } from '@/pages/api/web3.config';
 
 const NftCard = ({ tokenId }) => {
-  
   const [nft, setNft] = useState();
 
   const getNftMetadata = async () => {
@@ -18,9 +17,7 @@ const NftCard = ({ tokenId }) => {
       const response = await axios.get(getTokenURI);
 
       // 리빌 상태에 따른 이미지 가져오기
-      const getTokenImg = await contract.methods
-        .tokenURI(`${tokenId}`)
-        .call();
+      const getTokenImg = await contract.methods.tokenURI(`${tokenId}`).call();
       const response2 = await axios.get(getTokenImg);
 
       let nftArray = [];
