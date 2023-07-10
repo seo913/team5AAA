@@ -1,13 +1,12 @@
-
-import axios from "axios";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import { contract } from "@/pages/api/web3.config";
+import axios from 'axios';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+// import { Carousel2 } from '@christian-martins/react-grid-carousel';
+import { contract } from '@/pages/api/web3.config';
 
 const NftCard = ({ tokenId }) => {
-  
   const [nft, setNft] = useState();
 
   const getNftMetadata = async () => {
@@ -18,9 +17,7 @@ const NftCard = ({ tokenId }) => {
       const response = await axios.get(getTokenURI);
 
       // 리빌 상태에 따른 이미지 가져오기
-      const getTokenImg = await contract.methods
-        .tokenURI(`${tokenId}`)
-        .call();
+      const getTokenImg = await contract.methods.tokenURI(`${tokenId}`).call();
       const response2 = await axios.get(getTokenImg);
 
       let nftArray = [];
@@ -51,7 +48,7 @@ const NftCard = ({ tokenId }) => {
   }, [nft]);
 
   return (
-    <div className="m-2">
+    <div className='m-2'>
       {nft && nft[0] && (
         <div>
           <Carousel
@@ -60,18 +57,18 @@ const NftCard = ({ tokenId }) => {
             showIndicators={false}
             showThumbs={false}
           >
-            <div className="flex justify-center ">
+            <div className='flex justify-center '>
               <Image
                 src={nft[0].image}
-                alt="NFT Image"
+                alt='NFT Image'
                 width={250}
                 height={250}
-                className="rounded-xl"
+                className='rounded-xl'
               />
             </div>
-            <div className="font-Jalnan pt-4 text-center flex flex-col">
-              <div className="bg-zinc-800 text-slate-400 p-2 mt-2 rounded-3xl text-sm ">
-                <div className="pl-2 text-white">{nft[0].name}</div>
+            <div className='font-Jalnan pt-4 text-center flex flex-col'>
+              <div className='bg-zinc-800 text-slate-400 p-2 mt-2 rounded-3xl text-sm '>
+                <div className='pl-2 text-white'>{nft[0].name}</div>
                 <div>{nft[0].content}</div>
                 <div>Reveal-Type: {nft[0].type} </div>
                 <div>Time: {nft[0].time} </div>

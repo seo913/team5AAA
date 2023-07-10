@@ -66,6 +66,7 @@ export default function All() {
   return (
     <>
       <div
+        className='flex flex-col items-center justify-center '
         style={{
           background: 'linear-gradient(to right, pink, white)',
           borderImage: 'linear-gradient(to right, pink, white) 1',
@@ -73,14 +74,16 @@ export default function All() {
           WebkitBackgroundClip: 'text',
         }}
       >
-        <div className='flex justify-center font-Jalnan text-2xl'>
-          <p className='mt-10'>ALL PAGE</p>
+        <div className='flex justify-center font-Jalnan text-2xl  '>
+          <p className='mt-10 mb-5 '>ALL PAGE</p>
         </div>
-
-        <div className='flex flex-wrap gap-5 justify-center'>
+       
+        <div className='grid grid-cols-5 gap-20 items-center justify-center z-1'>
           {isLoading ? (
-            <div className='flex items-center justify-center w-full h-full'>
-              <p className='font-bold text-3xl pt-[300px]'>Loading...</p>
+            <div className='ml-[955px] flex items-center justify-center '>
+              <p className='font-bold text-3xl pt-[300px] font-Jalnan'>
+                Loading...
+              </p>
             </div>
           ) : (
             tokenIds &&
@@ -92,7 +95,7 @@ export default function All() {
                 return (
                   <div
                     key={tokenId}
-                    className='mt-5 border-gray-400 backdrop-blur-sm bg-white/20 w-[242px] h-[298px] rounded-lg'
+                    className='mt-5 border-gray-400 backdrop-blur-sm  bg-black/5 w-[242px] h-[298px] rounded-lg shadow-purple-400 shadow-lg transition-transform duration-300 transform hover:scale-105'
                   >
                     <div className='w-60 h-64 flex flex-col items-center'>
                       <Link href={`/detail/${tokenId}`}>
@@ -100,19 +103,19 @@ export default function All() {
                           <img
                             src={image}
                             alt='NFT'
-                            className='w-52 h-52 mt-3 rounded-md transition-transform duration-300 transform hover:scale-105'
+                            className='w-52 h-52 mt-3 rounded-md '
                           />
                         </div>
                       </Link>
                     </div>
 
-                    <div className='flex items-center backdrop-blur-sm bg-white/30 h-10 rounded-b-lg'>
+                    <div className='flex items-center backdrop-blur-sm bg-purple-500/20 h-10 rounded-b-lg'>
                       <p
-                        className='pl-4 text-md font-semibold'
+                        className='ml-4 text-md font-semibold '
                         style={{
-                          background: 'linear-gradient(to right, pink, white)',
+                          background: 'linear-gradient(to right, white, gray)',
                           borderImage:
-                            'linear-gradient(to right, pink, white) 1',
+                            'linear-gradient(to right, white, gray) 1',
                           WebkitTextFillColor: 'transparent',
                           WebkitBackgroundClip: 'text',
                         }}

@@ -9,8 +9,6 @@ import { Carousel } from 'react-responsive-carousel';
 import { contract } from '@/pages/api/web3.config';
 
 export default function Normal() {
- 
-
   //props account
   const { account } = useContext(AppContext);
 
