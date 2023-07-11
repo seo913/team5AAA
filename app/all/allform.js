@@ -74,14 +74,14 @@ export default function All() {
           WebkitBackgroundClip: 'text',
         }}
       >
-        <div className='flex justify-center font-Jalnan text-2xl  '>
+        <div className='flex justify-center items-center font-Jalnan text-2xl  '>
           <p className='mt-10 mb-5 '>ALL PAGE</p>
         </div>
-       
-        <div className='grid grid-cols-5 gap-20 items-center justify-center z-1'>
+
+        <div className='flex gap-20 flex-wrap justify-center'>
           {isLoading ? (
-            <div className='ml-[955px] flex items-center justify-center '>
-              <p className='font-bold text-3xl pt-[300px] font-Jalnan'>
+            <div className=' flex items-center justify-center text-center '>
+              <p className='font-bold text-3xl flex items-center justify-center pt-[300px] font-Jalnan'>
                 Loading...
               </p>
             </div>

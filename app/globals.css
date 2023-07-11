@@ -372,7 +372,7 @@
     margin-top: 50px;
     font-size: 18px;
     font-weight: 700;
-    color: gray;
+    color: whitesmoke;
   }
 
   /* 팀 소개 */
@@ -462,7 +462,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    
   }
 
   .menu {
@@ -548,6 +547,8 @@
     text-align: center;
     color: gold;
     font-size: 85px;
+    font-family: 'Jalnan';
+    src: url(../public/fonts/Jalnan.ttf);
   }
 
   /* 지갑 */

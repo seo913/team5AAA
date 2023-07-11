@@ -39,7 +39,7 @@ export default function Normal() {
 
   return (
     <>
-      <div className='mx-20'>
+      <div className='mx-20 '>
         <div
           className='font-Jalnan text-3xl pt-5 pb-2  flex justify-center'
           style={{
@@ -51,7 +51,7 @@ export default function Normal() {
         >
           Mypage
         </div>
-        <Carousel cols={3} rows={2} gap={30}>
+        <Carousel cols={3} rows={2} gap={0} className=''>
           {tokenIds?.reverse().map((v, i) => {
             return (
               <Carousel.Item key={i}>

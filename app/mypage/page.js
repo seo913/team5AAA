@@ -8,7 +8,7 @@ export default function Mypage() {
       <span className='shape '></span>
       <span className='shape'></span>
       <div>
-        <Normal />
+        <Normal  />
       </div>
     </div>
   );
