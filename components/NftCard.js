@@ -1,3 +1,4 @@
+'use client';
 import axios from 'axios';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -33,10 +34,29 @@ const NftCard = ({ tokenId }) => {
       });
 
       setNft(nftArray);
+      console.log(nftArray[0].tokenId);
     } catch (error) {
       console.error(error);
     }
   };
+
+  // const deleteNft = async () => {
+  //   try {
+  //     // const accounts = await window.ethereum.request({
+  //     //   method: 'eth_requestAccounts',
+  //     // });
+  //     // const account = accounts[0]; // account 변수로 변경
+  //     // console.log(account);
+
+  //     const nftX = await contract.methods
+  //       .burnNFT(`${nft[0].tokenId}`)
+  //       .send({ from: account });
+  //     alert('삭제가 완료 되었습니다!');
+  //     router.back();
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   useEffect(() => {
     getNftMetadata();
@@ -79,6 +99,11 @@ const NftCard = ({ tokenId }) => {
                   {nft[0].accountAddress.substring(
                     nft[0].accountAddress.length - 4
                   )}
+                </div>
+                <div className='mt-10'>
+                  {/* <button onClick={deleteNft} className=' text-fuchsia-400'>
+                    DELETE
+                  </button> */}
                 </div>
               </div>
             </div>
