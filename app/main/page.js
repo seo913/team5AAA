@@ -115,7 +115,7 @@ export default function Main() {
               </div>
               <div className='teamWord'>
                 <h3>서재민</h3>
-                <h2>팀장 / 풀스택</h2>
+                <h2>팀장 / 프론트 메인</h2>
                 <p>AAA대대장입니다.</p>
               </div>
             </div>
@@ -128,7 +128,7 @@ export default function Main() {
             </div>
             <div className='teamWord'>
               <h3>권세명</h3>
-              <h2>팀원 / 솔리디티</h2>
+              <h2>팀원 / 솔리디티, 프론트</h2>
               <p>AAA중대장입니다.</p>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function Main() {
             </div>
             <div className='teamWord'>
               <h3>박주용</h3>
-              <h2>팀원 / 웹디자인</h2>
+              <h2>팀원 / 디자인, 프론트</h2>
               <p>AAA소대장입니다.</p>
             </div>
           </div>

@@ -169,7 +169,7 @@ export default function Detail() {
                     <p className='mb-8'>
                       OWNER : <span> {nft.account}</span>
                     </p>
-                    <p className='ml-[2px]'>DESCRIPTION</p>
+                    <p className='ml-[2px]'>MEMO</p>
                     <div className='w-[540px] h-[165px] bg-gray-300 bg-opacity-10 rounded-lg shadow-inner shadow-purple-900'>
                       <p
                         className='mb-3 pt-2 pl-2'

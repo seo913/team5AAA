@@ -213,7 +213,7 @@
     margin-top: 50px;
     font-size: 18px;
     font-weight: 700;
-    color: gray;
+    color: white;
   }
 
   .introImg {
@@ -316,7 +316,7 @@
     margin-top: 50px;
     font-size: 18px;
     font-weight: 700;
-    color: gray;
+    color: white;
   }
 
   /* 소개3 */
@@ -372,7 +372,7 @@
     margin-top: 50px;
     font-size: 18px;
     font-weight: 700;
-    color: whitesmoke;
+    color: white;
   }
 
   /* 팀 소개 */
@@ -438,7 +438,7 @@
 
   .teamWord > h2 {
     font-size: 16px;
-    color: gray;
+    color: aqua;
   }
 
   .teamWord > p {
