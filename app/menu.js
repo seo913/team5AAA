@@ -72,7 +72,7 @@ export default function Menu() {
             <source src='/video/banner2.mp4' type='video/mp4' />
           </video>
           <div className='video_font flex justify-center items-center relative'>
-            {/* <img src="1200x1200.gif" alt="time"  className="w-[330px] h-[330px] absolute"/> */}
+            {/* <img src="5.gif" alt="time"  className=" z-[-1] w-full h-[1500px] absolute"/> */}
             <p >TIME SNAP</p>
           </div>
         </div>

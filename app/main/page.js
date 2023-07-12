@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Main() {
   // const [isToggled, setIsToggled] = useState(false);
 
@@ -88,13 +90,18 @@ export default function Main() {
         {/* 소개4 */}
         <div className='introduce4'>
           <div className='introWord4'>
-            <h3>프로젝트 소개</h3>
+            <h3>
+              <p className='word_color'>MINT</p>
+            </h3>
             <p>
-              TimeSnap은 TimeStamp + SnapShot 타임스탬프는 이벤트,
-              <br />
-              즉, 사건이 컴퓨터에 기록된 시간을 의미하고 스냅샷은 짧은 순간에
-              찍은 사진을 말합니다.
+              행복한 순간들과 잊고 싶지 않은 시간들을 타임캡슐에 담아
+              민팅하러가기
             </p>
+            <Link href='/mint'>
+              <p className=' flex justify-center rounded-xl bg-pink-700 font-bold items-center shadow-md shadow-black h-[40px] w-[100px] text-lg mt-10 text-white'>
+                Mint Now
+              </p>
+            </Link>
           </div>
 
           <div className='introImg'>
