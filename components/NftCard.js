@@ -101,9 +101,9 @@ const NftCard = ({ tokenId }) => {
                   )}
                 </div>
                 <div className='mt-10'>
-                  {/* <button onClick={deleteNft} className=' text-fuchsia-400'>
+                  <button  className=' text-fuchsia-400'>
                     DELETE
-                  </button> */}
+                  </button>
                 </div>
               </div>
             </div>

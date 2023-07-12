@@ -41,7 +41,7 @@ export default function Normal() {
     <>
       <div className='mx-20 '>
         <div
-          className='font-Jalnan text-3xl pt-5 pb-2  flex justify-center'
+          className='font-Jalnan text-3xl mt-5 pb-2  flex justify-center'
           style={{
             background: 'linear-gradient(to right, pink, white)',
             borderImage: 'linear-gradient(to right, pink, white) 1',
@@ -49,7 +49,7 @@ export default function Normal() {
             WebkitBackgroundClip: 'text',
           }}
         >
-          Mypage
+          MY PAGE
         </div>
         <Carousel cols={3} rows={2} gap={0} className=''>
           {tokenIds?.reverse().map((v, i) => {

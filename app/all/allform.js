@@ -74,8 +74,8 @@ export default function All() {
           WebkitBackgroundClip: 'text',
         }}
       >
-        <div className='flex justify-center items-center font-Jalnan text-2xl  '>
-          <p className='mt-10 mb-5 '>ALL PAGE</p>
+        <div className='flex justify-center items-center font-Jalnan text-3xl  '>
+          <p className='mt-5 mb-5  '>ALL PAGE</p>
         </div>
 
         <div className='flex gap-20 flex-wrap justify-center'>
