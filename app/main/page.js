@@ -21,7 +21,12 @@ export default function Main() {
       <span className='shape'></span>
       <div className='wrapSlim'>
         {/* 소개1 */}
-        <div className='introduce'>
+        <div className='introduce '>
+          <div className='introImg'>
+            <div className='imgbox'>
+              <img src='intro.svg' alt='소개 이미지' />
+            </div>
+          </div>
           <div className='introWord'>
             <h3>
               <span className='word_color'>Time Snap</span>
@@ -37,12 +42,6 @@ export default function Main() {
               되살리는 데 도움을 줄 수 있습니다. 이를 활용하여 여행 사진, 가족
               행사 사진, 이벤트 사진 등을 정리하고 추억을 공유할 수 있습니다.
             </p>
-          </div>
-
-          <div className='introImg'>
-            <div className='imgbox'>
-              <img src='intro.svg' alt='소개 이미지' />
-            </div>
           </div>
         </div>
 
